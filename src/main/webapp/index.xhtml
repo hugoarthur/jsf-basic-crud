@@ -4,24 +4,24 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<title>Pessoas</title>
+	<title>People</title>
 </h:head>
 <h:body>
 	<h:form>
-		<h:dataTable value="#{pessoaMB.pessoas}" var="pessoa">
+		<h:dataTable value="#{personMB.people}" var="person">
 			<h:column>
-				<h:outputLabel value="Nome: #{pessoa.name}" />
-				<h:outputLabel value="Idade: #{pessoa.age}" />
+				<h:outputLabel value="Nome: #{person.name}" />
+				<h:outputLabel value="Idade: #{person.age}" />
 				<h:outputText value="  " />
-				<h:commandLink value="Editar" />
+				<h:commandLink value="Edit" />
 				- 
-				<h:commandLink value="Deletar" actionListener="#{pessoaMB.deletar}">
-					<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaMB.pessoaExcluida}" />
+				<h:commandLink value="Delete" actionListener="#{personMB.delete}">
+					<f:setPropertyActionListener value="#{person}" target="#{personMB.deletedPerson}" />
 				</h:commandLink>
 			</h:column>
 		</h:dataTable>
-		<h:outputLink value="cadastrar.xhtml">Cadastrar</h:outputLink>
-		<h:commandButton value="Consultar" actionListener="#{pessoaMB.consultar}" />
+		<h:outputLink value="create.xhtml">Create</h:outputLink>
+		<h:commandButton value="List" actionListener="#{personMB.list}" />
 	</h:form>
 </h:body>
 </html>

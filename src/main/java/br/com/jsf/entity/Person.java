@@ -2,11 +2,16 @@ package br.com.jsf.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table
-public class Pessoa {
+public class Person {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer id;
 	@Column
@@ -14,10 +19,10 @@ public class Pessoa {
 	@Column
 	private int age;
 
-	public Pessoa() {
+	public Person() {
 	}
 
-	public Pessoa(String name, int age) {
+	public Person(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
@@ -54,7 +59,7 @@ public class Pessoa {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pessoa other = (Pessoa) obj;
+		Person other = (Person) obj;
 		if (age != other.age)
 			return false;
 		if (name == null) {
