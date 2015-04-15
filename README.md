@@ -60,7 +60,7 @@ Now we are gonna to configure the **standalone.xml** to find this driver connect
     </pool>
     <security>
         <user-name>root</user-name>
-        <password>123456</password>
+        <password>root</password>
     </security>
     <statement>
         <prepared-statement-cache-size>32</prepared-statement-cache-size>
