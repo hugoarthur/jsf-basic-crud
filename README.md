@@ -12,8 +12,6 @@ For this example I use the following tools:
 
 ### Java Tools
 
-Dillinger uses a number of open source projects to work properly:
-
 * JavaEE 6
 * CDI 1.2
 * JSF 2.0
@@ -136,4 +134,7 @@ Caused by: javax.persistence.TransactionRequiredException: JBAS011469: Transacti
 ####Contact
  * [Twitter]
 
+Created on: [Dillinger]
+
 [Twitter]:http://twitter.com/hugoarthur
+[Dillinger]:http://dillinger.io/
