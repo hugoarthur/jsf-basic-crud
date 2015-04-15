@@ -8,6 +8,8 @@ import javax.persistence.Table;
 @Table
 public class Pessoa {
 	@Column
+	private Integer id;
+	@Column
 	private String name;
 	@Column
 	private int age;
@@ -18,6 +20,14 @@ public class Pessoa {
 	public Pessoa(String name, int age) {
 		this.name = name;
 		this.age = age;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {

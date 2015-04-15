@@ -13,6 +13,7 @@ import br.com.jsf.entity.Pessoa;
 @ManagedBean
 @SessionScoped
 public class PessoaMB {
+	private Integer id;
 	private String name;
 	private Integer age;
 
@@ -21,6 +22,14 @@ public class PessoaMB {
 
 	@Inject
 	private PessoaDao dao;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
@@ -67,7 +76,7 @@ public class PessoaMB {
 	public void consultar() {
 		getPessoas().addAll(new PessoaDao().list());
 	}
-	
+
 	public void deletar() {
 		getPessoas().remove(this.pessoaExcluida);
 		this.pessoaExcluida = null;
