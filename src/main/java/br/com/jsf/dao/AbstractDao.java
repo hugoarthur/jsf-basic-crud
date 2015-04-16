@@ -29,9 +29,9 @@ public abstract class AbstractDao<T> {
 		return t;
 	}
 
-	public T delete(T t) {
+	public void delete(T t) {
+		t = this.em.merge(t);
 		this.em.remove(t);
-		return t;
 	}
 
 	@SuppressWarnings("unchecked")

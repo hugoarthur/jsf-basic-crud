@@ -19,6 +19,11 @@ public class PersonService {
 		return person;
 	}
 
+	public Person update(Person person) {
+		dao.update(person);
+		return person;
+	}
+
 	public Person find(Person person) {
 		dao.find(person);
 		return person;

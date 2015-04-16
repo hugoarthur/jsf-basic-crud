@@ -5,13 +5,13 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
 import br.com.jsf.entity.Person;
 import br.com.service.PersonService;
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class PersonMB {
 	private Integer id;
 	private String name;
@@ -73,12 +73,21 @@ public class PersonMB {
 		return "index.xhtml";
 	}
 
+	public String edit() {
+		Person person = new Person(this.name, this.age);
+		getPeople().remove(person);
+		person = service.update(person);
+		getPeople().add(person);
+		return "index.xhtml";
+	}
+	
 	public void list() {
 		this.people = service.list();
 	}
 
 	public void delete() {
 		service.delete(this.deletedPerson);
+		this.people.remove(this.deletedPerson);
 		this.deletedPerson = null;
 	}
 
