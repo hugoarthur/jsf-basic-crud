@@ -6,6 +6,7 @@
   <persistence-unit name="primary">
   	<jta-data-source>java:/MyDS</jta-data-source>
   	<properties>
+  		<!-- Hibernate properties -->
   		<!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
   		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
   		<property name="hibernate.format_sql" value="true" />
