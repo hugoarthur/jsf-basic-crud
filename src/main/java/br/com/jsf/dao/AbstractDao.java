@@ -16,19 +16,22 @@ public abstract class AbstractDao<T> {
 	}
 
 	public T find(Object id) {
-		return em.find(clazz, id);
+		return this.em.find(clazz, id);
 	}
 
-	public void create(T t) {
-		em.persist(t);
+	public T create(T t) {
+		this.em.persist(t);
+		return t;
 	}
 
-	public void update(T t) {
-		em.merge(t);
+	public T update(T t) {
+		this.em.merge(t);
+		return t;
 	}
 
-	public void delete(T t) {
-		em.remove(t);
+	public T delete(T t) {
+		this.em.remove(t);
+		return t;
 	}
 
 	@SuppressWarnings("unchecked")

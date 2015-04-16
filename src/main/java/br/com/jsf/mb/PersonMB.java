@@ -3,12 +3,12 @@ package br.com.jsf.mb;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.inject.Inject;
 
-import br.com.jsf.dao.PersonDao;
 import br.com.jsf.entity.Person;
+import br.com.service.PersonService;
 
 @ManagedBean
 @ViewScoped
@@ -20,8 +20,8 @@ public class PersonMB {
 	private List<Person> people;
 	private Person deletedPerson;
 
-	@Inject
-	private PersonDao dao;
+	@EJB
+	private PersonService service;
 
 	public Integer getId() {
 		return id;
@@ -68,17 +68,17 @@ public class PersonMB {
 
 	public String create() {
 		Person person = new Person(this.name, this.age);
-		dao.create(person);
+		service.create(person);
 		getPeople().add(person);
 		return "index.xhtml";
 	}
 
 	public void list() {
-		this.people = dao.list();
+		this.people = service.list();
 	}
 
 	public void delete() {
-		getPeople().remove(this.deletedPerson);
+		service.delete(this.deletedPerson);
 		this.deletedPerson = null;
 	}
 
