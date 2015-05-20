@@ -18,7 +18,7 @@ For this example I use the following tools:
 * Hibernate 4.3.8
 * JPA 2.0
 
-### Configurantion on JBoss 7.1.1
+### Configuration on JBoss 7.1.1
 
  1. Create a folder named **mysql** inside *JBOSS_HOME/module/com*.
  2. Inside the **mysql** folder create another folder named **main**.
