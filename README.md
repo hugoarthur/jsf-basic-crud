@@ -81,9 +81,8 @@ That's pretty much it... Just run your application and good luck. :)
 ### Issues
 
  - All issues were fixed for now.
- ```
 
-####Contact
+#### Contact
  * [Twitter]
 
 Created on: [Dillinger]
