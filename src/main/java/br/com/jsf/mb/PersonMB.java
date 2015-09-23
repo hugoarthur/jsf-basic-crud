@@ -8,7 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.com.jsf.entity.Person;
-import br.com.service.PersonService;
+import br.com.service.PersonServiceLocal;
 
 @ManagedBean
 @SessionScoped
@@ -21,7 +21,7 @@ public class PersonMB {
 	private Person deletedPerson;
 
 	@EJB
-	private PersonService service;
+	private PersonServiceLocal service;
 
 	public Integer getId() {
 		return id;

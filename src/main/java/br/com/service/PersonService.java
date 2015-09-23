@@ -9,7 +9,7 @@ import br.com.jsf.dao.PersonDao;
 import br.com.jsf.entity.Person;
 
 @Stateless
-public class PersonService {
+public class PersonService implements PersonServiceLocal {
 
 	@Inject
 	private PersonDao dao;
